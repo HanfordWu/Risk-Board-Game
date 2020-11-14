@@ -47,7 +47,7 @@ public class PhaseView extends JFrame implements Observer{
 	private JFrame commonViewFrame;
 	private JLabel phaseViewLabel;
 	private  JLabel loggerLabel;
-	private Gameplay gameInstance;
+//	private Gameplay gameInstance;
 	private ArrayList<String> loggerList;
 	private JScrollPane playerScrollPane;
 	private JTextArea loggerText;
@@ -59,11 +59,11 @@ public class PhaseView extends JFrame implements Observer{
 
 	public PhaseView() {
 		
-		gameInstance=Gameplay.getInstance();
-		gameInstance.addObserver(this);
-		currentPlayer=gameInstance.getCurrentPlayer();
-		currentPhase=gameInstance.getCurrentPhase();
-		loggerList=gameInstance.getViewLogger();
+		//gameInstance=Gameplay.getInstance();
+		Gameplay.getInstance().addObserver(this);
+		currentPlayer=Gameplay.getInstance().getCurrentPlayer();
+		currentPhase=Gameplay.getInstance().getCurrentPhase();
+		loggerList=Gameplay.getInstance().getViewLogger();
 		viewLogger="";
 		
 		
@@ -146,7 +146,7 @@ public class PhaseView extends JFrame implements Observer{
 			if(currentPlayer==null)
 				playerName="N/A";
 			else
-				playerName=currentPlayer.getPlayerName();
+				playerName=currentPlayer.getPlayerName()+"-"+currentPlayer.getStrategy().getStrategyName();
 			Object[][] data = {
 					{"Game Phase",currentPhase.name()},
 					{"Current Player",playerName},

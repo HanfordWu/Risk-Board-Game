@@ -1,10 +1,12 @@
-# SOEN_6441
-SOEN 6441 Risk Game
+# Multiplayer Risk Board Game
+## Overview 
+A Risk game consists of a connected graph map representing a world map, where each node is a country and each edge represents adjacency between countries. Two or more players can play by placing armies on countries they own, from which they can attack adjacent countries to conquer them. The objective of the game is to conquer all countries on the map.
 
 
 
 ## Architecture Diagram
 ![Architecture Diagram](https://github.com/san089/SOEN_6441/blob/master/Documents/ArchitectureDesign_Build2.png)
+![MVC Diagrame](http://assets.processon.com/chart_image/5da4e016e4b0ea86c2afe75d.png)
 
 
 
@@ -70,3 +72,8 @@ do a single attack from **countrynamefrom** to **countynameto** using **numdice*
     fortify fromcountry tocountry num
     fortify –none
     (move num number of armies from fromcountry to tocountry. If –none is specified, choose to not do a move during the fortification phase)
+    
+## Tournament Command
+
+    tournament -M D:\SOEN_6441\Maps\Valid_Maps\BigValidMap.map|D:\SOEN_6441\Maps\Valid_Maps\BigValidMap.map|D:\SOEN_6441\Maps\Valid_Maps\BigValidMap.map -P Random|Benevolent|Aggressive -G 4 -D 10
+
